@@ -1,4 +1,8 @@
 /* ESTILO GERAL */
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -274,6 +278,8 @@ section.portfolio {
 section.portfolio .flex {
     justify-content: space-around;
     margin-top: 60px;
+    flex-wrap: wrap;
+    gap: 40px;
 }
 
 .img-port {
@@ -281,36 +287,62 @@ section.portfolio .flex {
     height: 460px;
     background-size: cover;
     background-position: 100% 0%;
-    transition: 8s;
+    transition: background-position 2.5s ease, transform 0.3s ease;
     cursor: pointer;
     border-radius: 40px;
     position: relative;
+    text-decoration: none;
+    display: block;
+    overflow: hidden;
 }
 
 .img-port:hover {
     background-position: 100% 100%;
+    transform: translateY(-5px);
 }
 
-.overlay {
+.img-port .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #000000b8;
+    background-color: rgba(0, 0, 0, 0.55);
     border-radius: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
-    font-weight: 600;
-    color: #fff;
+    text-align: center;
+    padding: 20px;
     opacity: 0;
-    transition: .5s;
+    transition: opacity 0.3s ease;
 }
 
-.overlay:hover {
+.img-port:hover .overlay {
     opacity: 1;
+}
+
+.img-port .overlay p {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.btn-portfolio {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #00FF08;
+    color: #000;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-portfolio:hover {
+    box-shadow: 0px 0px 15px #00ff08;
+    transform: scale(1.05);
 }
 
 /* ESTILO DO FORMULÁRIO DE CONTATO */
