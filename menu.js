@@ -15,3 +15,11 @@ overlay.addEventListener('click', ()=>{
     menu.classList.remove('abrir-menu')
 })
 
+// Fechar menu mobile ao clicar em um link
+const menuLinks = menu.querySelectorAll('a')
+menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        menu.classList.remove('abrir-menu')
+    })
+})
+
